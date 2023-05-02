@@ -4,15 +4,9 @@ const {SlashCommandBuilder} = require('discord.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('roll')
-    .setDescription(
-      'Rolls those bones! [dice notation](https://dice-roller.github.io/documentation/guide/notation/)'
-    )
+    .setDescription('Rolls those bones!')
     .addStringOption((option) => {
-      return option
-        .setName('dice')
-        .setDescription(
-          '[Dice notation](https://dice-roller.github.io/documentation/guide/notation/) to roll'
-        );
+      return option.setName('dice').setDescription('dice notation to roll');
     }),
   async execute(interaction) {
     const dice = interaction.options.getString('dice') ?? '1d20';
