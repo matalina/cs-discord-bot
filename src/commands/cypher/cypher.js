@@ -12,7 +12,7 @@ module.exports = {
     let output = `**Find 1d6 Cyphers**\n`;
     output += `${roll.output}\n`;
     for (let i in cyphers) {
-      output += `1. ${printCypher(cyphers[i])}\n`;
+      output += `* ${printCypher(cyphers[i])}\n`;
     }
     await interaction.reply(output);
   },
