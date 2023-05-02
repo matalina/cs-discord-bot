@@ -1,0 +1,16 @@
+{
+  "name": "solo-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Alicia Wilkerson <matalina@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@dice-roller/rpg-dice-roller": "^5.2.1",
+    "discord.js": "^14.10.2",
+    "dotenv": "^16.0.3"
+  }
+}
