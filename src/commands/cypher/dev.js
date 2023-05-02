@@ -1,4 +1,5 @@
 const {SlashCommandBuilder} = require('discord.js');
+const {rollDeveloper} = require('../../lib/developer');
 
 module.exports = {
   data: new SlashCommandBuilder()

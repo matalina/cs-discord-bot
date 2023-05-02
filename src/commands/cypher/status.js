@@ -1,5 +1,6 @@
 const {SlashCommandBuilder} = require('discord.js');
 const {rollDeveloper} = require('../../lib/developer');
+const {rollOnTable} = require('../../lib/tables');
 
 table = [
   {min: 1, max: 1, description: 'Solid'},
