@@ -13,6 +13,6 @@ module.exports = {
   async execute(interaction) {
     const count = interaction.options.getInteger('count') ?? 3;
     const keywords = getRandomKeywords(count);
-    await interaction.reply(keywords.join(' ,'));
+    await interaction.reply(keywords.join(', '));
   },
 };
