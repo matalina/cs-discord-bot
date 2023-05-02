@@ -10,19 +10,11 @@ module.exports = {
         .setName('question')
         .setDescription('ask a question')
         .setRequired(true);
-    })
-    .addStringOption((option) => {
-      return option
-        .setName('probability')
-        .setDescription(
-          'i-impossible, hu-highly unlikely, u-unlikely, p-possible, l-likely, hl-highly likely, c-certainly'
-        );
     }),
   async execute(interaction) {
     const question = interaction.options.getString('question');
-    const mod = interaction.options.getString('probability') ?? 'p';
     const {answer, roll, keywords} = getAnswer(mod);
-    let output = `**Q:** ${question}\n${roll.output}`;
+    let output = `**Q:** ${question}\n${roll.output}\n**${answer}**`;
     if (keywords !== []) {
       output += `\n${keywords.join(', ')}`;
     }

@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "jest"
   },
   "author": "Alicia Wilkerson <matalina@gmail.com>",
   "license": "MIT",
@@ -12,5 +13,8 @@
     "@dice-roller/rpg-dice-roller": "^5.2.1",
     "discord.js": "^14.10.2",
     "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
   }
 }

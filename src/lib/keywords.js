@@ -1,4 +1,4 @@
-const {getRandomItem, getRandomItems} = required('./keywords.js');
+const {getRandomItem, getRandomItems} = require('./random.js');
 
 const keywords = [
   'Turgid',
@@ -801,7 +801,8 @@ const keywords = [
   'Talk',
 ];
 
-export function getRandomKeywords(number = 3) {
+function getRandomKeywords(number = 3) {
+  console;
   return getRandomItems(keywords, number);
 }
 
@@ -812,4 +813,5 @@ function getRandomWord() {
 module.exports = {
   getRandomKeywords,
   getRandomWord,
+  keywords,
 };
