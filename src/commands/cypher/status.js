@@ -16,7 +16,7 @@ module.exports = {
     .setName('status')
     .setDescription('Generate an Adventure Status'),
   async execute(interaction) {
-    const {description, roll} = rollOnTable(formula, table);
+    const {description, roll} = rollOnTable('1d6', table);
     const dev = rollDeveloper();
     await interaction.reply(
       `**${description} (${roll.total})**\n${roll.output}\n**Developer**\n${dev.dev}\n${dev.roll.output}`
