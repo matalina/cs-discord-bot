@@ -28,8 +28,9 @@ const formula = '1d20';
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('quest')
-    .setDescription('Replies with Pong!'),
+    .setDescription('Generate a random quest type'),
   async execute(interaction) {
-    await interaction.reply(rollOnTable(formula, table));
+    const {description, roll} = rollOnTable(formula, table);
+    await interaction.reply(`**${description}**\n${roll.output}`);
   },
 };

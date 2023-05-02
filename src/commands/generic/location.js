@@ -56,9 +56,11 @@ module.exports = {
     let output;
     const highLow = new DiceRoll('1d4');
     if (highLow.total <= 2) {
-      output = rollOnTable('1d20', low);
+      const {description, roll} = rollOnTable('1d20', low);
+      output = `**${description}**\n${roll.output}`;
     } else {
-      output = rollOnTable('1d20', high);
+      const {description, roll} = rollOnTable('1d20', high);
+      output = `**${description}**\n${roll.output}`;
     }
 
     await interaction.reply(output);
