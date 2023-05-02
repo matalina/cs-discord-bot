@@ -19,7 +19,9 @@ module.exports = {
     const {description, roll} = rollOnTable('1d6', table);
     const dev = rollDeveloper();
     await interaction.reply(
-      `**${description} (${roll.total})**\n${roll.output}\n**Developer**\n${dev.dev}\n${dev.roll.output}`
+      `**${description} (${roll.total * 3})**\n${roll.output}\n**Developer**\n${
+        dev.dev
+      }\n${dev.roll.output}`
     );
   },
 };
