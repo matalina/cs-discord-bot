@@ -51,7 +51,7 @@ const low = [
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('location')
-    .setDescription('Replies with Pong!'),
+    .setDescription('Get random generic location'),
   async execute(interaction) {
     let output;
     const highLow = new DiceRoll('1d4');
