@@ -13,7 +13,7 @@ module.exports = {
     }),
   async execute(interaction) {
     const question = interaction.options.getString('question');
-    const {answer, roll, keywords} = getAnswer(mod);
+    const {answer, roll, keywords} = getAnswer();
     let output = `**Q:** ${question}\n${roll.output}\n**${answer}**`;
     if (keywords !== []) {
       output += `\n${keywords.join(', ')}`;
