@@ -1,5 +1,6 @@
 const {getRandomItem, getRandomItems} = require('./random.js');
 const {subtleCyphers} = require('./cyphers/subtle');
+const {DiceRoll} = require('@dice-roller/rpg-dice-roller');
 const cyphers = [...subtleCyphers];
 
 function getRandomCyphers(count = 3) {
