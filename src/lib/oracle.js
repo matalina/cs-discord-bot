@@ -1,31 +1,26 @@
 const {DiceRoll} = require('@dice-roller/rpg-dice-roller');
 const {getRandomKeywords} = require('./keywords.js');
+const {rollOnTable} = require('./tables.js');
 
 const oracle = [
-  [1, 2, 'No, and'],
-  [3, 7, 'No'],
-  [8, 9, 'No, but'],
-  [10, 10, 'Maybe'],
-  [11, 12, 'Yes, but'],
-  [13, 18, 'Yes'],
-  [19, 20, 'Yes, and'],
+  {min: 1, max: 2, description: 'No, and'},
+  {min: 3, max: 7, description: 'No'},
+  {min: 8, max: 9, description: 'No, but'},
+  {min: 10, max: 10, description: 'Maybe'},
+  {min: 11, max: 12, description: 'Yes, but'},
+  {min: 13, max: 18, description: 'Yes'},
+  {min: 19, max: 20, description: 'Yes, and'},
 ];
 
 function getAnswer() {
-  let answer = '';
   let keywords = [];
 
   const notation = `1d20`;
-  const roll = new DiceRoll(notation);
-  const ask = roll.total;
-  for (let i in oracle) {
-    const range = oracle[i];
-    if (ask >= range[0] && ask <= range[1]) answer = range[2].toString();
-  }
-  if (answer.includes('and') || answer.includes('but')) {
+  const {description, roll} = rollOnTable(notation, oracle);
+  if (description.includes('and') || description.includes('but')) {
     keywords = getRandomKeywords();
   }
-  return {answer, roll, keywords};
+  return {answer: description, roll, keywords};
 }
 
 module.exports = {
