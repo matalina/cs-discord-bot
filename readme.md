@@ -14,7 +14,8 @@
 - [x] adventure status
 - [x] action target with developer
 - [x] developer for scenes and tasks
-- [ ] NPC fleshing out
-- [ ] Generate creatures
+- [x] NPC fleshing out
+- [x] Generate creatures
 - [ ] add the cypher tables for three subtle cyphers
 - [ ] add other cypher types and ability to choose the type
+- [ ] generate a random text grid map
