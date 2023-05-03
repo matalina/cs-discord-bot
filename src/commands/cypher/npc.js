@@ -34,7 +34,7 @@ module.exports = {
     const type = interaction.options.getString('type');
     const details = interaction.options.getString('details');
     const level = interaction.options.getInteger('level') ?? null;
-    const npc = generateNpc(level);
+    const npc = generateNpc(level, type, details);
     await interaction.reply(npc);
   },
 };
