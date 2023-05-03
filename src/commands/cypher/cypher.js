@@ -1,11 +1,9 @@
-const {DiceRoll} = require('@dice-roller/rpg-dice-roller');
 const {SlashCommandBuilder} = require('discord.js');
-const {getRandomCyphers, printCypher} = require('../../lib/cyphers');
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('cypher')
-    .setDescription('Replies with Pong!'),
+    .setDescription('Generate random cyphers'),
   async execute(interaction) {
     await interaction.reply(getAndPrintRandomCyphers());
   },
