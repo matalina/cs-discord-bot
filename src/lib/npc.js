@@ -19,25 +19,30 @@ function generateNpc(level = null, npc = 'npc', details = 'basic') {
   const drops = rollOnTable('1d8', loot);
 
   if (details === 'basic') {
-    return `L${level} HP ${hp}, damage ${damage}\n**loot:** ${drops}`;
+    return `L${level} HP ${hp}, damage ${damage}\n**loot:** ${drops.description}`;
   }
 
   if (npc === 'creature') {
     return (
-      `L${level} ${rollOnTable('1d20', creatures)}\n` +
+      `L${level} ${rollOnTable('1d20', creatures).description}\n` +
       `HP ${hp}, damage ${damage}\n` +
-      `**motivation:** ${rollOnTable('1d20', motivations)}\n**loot:** ${drops}`
+      `**motivation:** ${
+        rollOnTable('1d20', motivations).description
+      }\n**loot:** ${drops.description}`
     );
   }
 
   return (
-    `L{$level} ${rollOnTable('1d100', descriptor)} ${rollOnTable(
-      '1d100',
-      type
-    )} ` +
-    `who ${rollOnTable('1d100', focusA)} ${rollOnTable('1d100', focusB)}\n` +
+    `L{$level} ${rollOnTable('1d100', descriptor).description} ${
+      rollOnTable('1d100', type).description
+    } ` +
+    `who ${rollOnTable('1d100', focusA).description} ${
+      rollOnTable('1d100', focusB).description
+    }\n` +
     `HP ${hp}, damage ${damage}\n` +
-    `**disposition:** ${rollOnTable('1d100', disposition)}\n**loot:** ${drops}`
+    `**disposition:** ${
+      rollOnTable('1d100', disposition).description
+    }\n**loot:** ${drops.description}`
   );
 }
 
