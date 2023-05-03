@@ -1,8 +1,8 @@
 const {DiceRoll, Dice} = require('@dice-roller/rpg-dice-roller');
 const npc = require('../commands/cypher/npc');
 const {
-  descriptor,
-  type,
+  descriptors,
+  types,
   focusA,
   focusB,
   disposition,
@@ -33,8 +33,8 @@ function generateNpc(level = null, npc = 'npc', details = 'basic') {
   }
 
   return (
-    `L${level} ${rollOnTable('1d100', descriptor).description} ${
-      rollOnTable('1d100', type).description
+    `L${level} ${rollOnTable('1d100', descriptors).description} ${
+      rollOnTable('1d100', types).description
     } ` +
     `who ${rollOnTable('1d100', focusA).description} ${
       rollOnTable('1d100', focusB).description
