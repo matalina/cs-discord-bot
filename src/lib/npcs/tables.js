@@ -1,3 +1,6 @@
+const {DiceRoll} = require('@dice-roller/rpg-dice-roller');
+const {printCypher, getAndPrintRandomCyphers} = require('../cyphers');
+
 const descriptors = [
   {min: 1, max: 1, description: 'Addicted'},
   {min: 2, max: 2, description: 'Adventurous'},
@@ -499,14 +502,22 @@ const motivations = [
 ];
 
 const loot = [
-  {min: 1, max: 1, description: '1d6 Cyphers'},
+  {min: 1, max: 1, description: getAndPrintRandomCyphers()},
   {min: 2, max: 2, description: 'Artifact/Oddity'},
-  {min: 3, max: 3, description: '1d4 inexpensive'},
-  {min: 4, max: 4, description: '1d6 inexpensive'},
-  {min: 5, max: 5, description: '1d4 moderate'},
-  {min: 6, max: 6, description: '1d6 moderate'},
-  {min: 7, max: 7, description: '1d4 expensive'},
-  {min: 8, max: 8, description: '1d6 Cyphers'},
+  {
+    min: 3,
+    max: 3,
+    description: `${new DiceRoll('1d4').total} inexpensive items`,
+  },
+  {
+    min: 4,
+    max: 4,
+    description: `${new DiceRoll('1d6').total} inexpensive items`,
+  },
+  {min: 5, max: 5, description: `${new DiceRoll('1d4').total} moderate items`},
+  {min: 6, max: 6, description: `${new DiceRoll('1d6').total} moderate items`},
+  {min: 7, max: 7, description: `${new DiceRoll('1d4').total} expensive items`},
+  {min: 8, max: 8, description: getAndPrintRandomCyphers()},
 ];
 
 module.exports = {
