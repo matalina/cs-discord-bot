@@ -1,4 +1,5 @@
 const {SlashCommandBuilder} = require('discord.js');
+const {getAndPrintRandomCyphers} = require('../../lib/cyphers');
 
 module.exports = {
   data: new SlashCommandBuilder()
