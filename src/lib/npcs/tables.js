@@ -1,5 +1,5 @@
 const {DiceRoll} = require('@dice-roller/rpg-dice-roller');
-const {printCypher, getAndPrintRandomCyphers} = require('../cyphers');
+const {getAndPrintRandomCyphers} = require('../cyphers');
 
 const descriptors = [
   {min: 1, max: 1, description: 'Addicted'},

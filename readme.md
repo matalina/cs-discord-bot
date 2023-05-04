@@ -19,3 +19,4 @@
 - [ ] add the cypher tables for three subtle cyphers
 - [ ] add other cypher types and ability to choose the type
 - [ ] generate a random text grid map
+- [x] added loot
