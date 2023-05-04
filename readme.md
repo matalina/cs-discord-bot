@@ -16,7 +16,7 @@
 - [x] developer for scenes and tasks
 - [x] NPC fleshing out
 - [x] Generate creatures
-- [ ] add the cypher tables for three subtle cyphers
-- [ ] add other cypher types and ability to choose the type
+- [x] add the cypher tables for three subtle cyphers
+- [x] add other cypher types and ability to choose the type
 - [ ] generate a random text grid map
 - [x] added loot
